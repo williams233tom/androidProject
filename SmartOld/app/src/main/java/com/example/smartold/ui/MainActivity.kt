@@ -114,5 +114,6 @@ class MainActivity : AppCompatActivity() {
         initOnclick(); // 单击按钮，碎片随着变化
         enableEdgeToEdge()
 
+
     }
 }
