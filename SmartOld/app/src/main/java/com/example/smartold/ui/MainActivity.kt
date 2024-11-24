@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private val fragmentList: MutableList<Fragment> = ArrayList<Fragment>() // 用于存放碎片列表
     private var position = 0 // 用于记录当前所在的页面，默认值为0表示选中第一页
 
+    //初始化fragment
     private fun initData() {
         homeFragment = HomeFragment()
         mapFragment = MapFragment()
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    //底部导航点击
     private fun initOnclick() {
         radio_group!!.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {
