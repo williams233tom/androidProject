@@ -80,4 +80,5 @@
         app:layout_constraintTop_toBottomOf="@id/carer_fragment_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHeight_percent="0.48"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
