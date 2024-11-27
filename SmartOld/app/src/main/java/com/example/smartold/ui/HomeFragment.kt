@@ -16,7 +16,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-
+import androidx.fragment.app.FragmentTransaction
+import com.example.smartold.ui.homechild.CarerFragment
+import com.example.smartold.ui.homechild.FunctionFragment
 
 
 class HomeFragment : Fragment() {
@@ -55,6 +57,18 @@ class HomeFragment : Fragment() {
                 drawerLayout.openDrawer(GravityCompat.START)
             }
         }
+
+        // 加载CareFragment
+        val carerFragment = CarerFragment()
+        val careTransaction = childFragmentManager.beginTransaction()
+        careTransaction.replace(R.id.carer_fragment_container,carerFragment)
+        careTransaction.commit()
+
+        // 加载FunctionFragment
+        val functionFragment = FunctionFragment()
+        val functionTransaction = childFragmentManager.beginTransaction()
+        functionTransaction.replace(R.id.function_fragment_container,functionFragment)
+        functionTransaction.commit()
 
         // 返回view
         return view

@@ -56,6 +56,11 @@ dependencies {
 
     implementation (libs.androidx.lifecycle.extensions)
 
+    //ConstraintLayout
+    implementation (libs.androidx.constraintlayout)
+
+    implementation (libs.material.v140)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
