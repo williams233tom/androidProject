@@ -1,11 +1,14 @@
 package com.example.smartold.ui.homechild
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.example.smartold.R
+import com.example.smartold.ui.CareInfoActivity
 
 class CarerFragment : Fragment(){
 
@@ -18,6 +21,17 @@ class CarerFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.carer_fragment,container,false)
+        val view = inflater.inflate(R.layout.carer_fragment,container,false)
+
+        val careLayout: LinearLayout = view.findViewById(R.id.careInfo)
+        careLayout.setOnClickListener{
+            val intent = Intent (context ,CareInfoActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        return view
     }
+
+
 }

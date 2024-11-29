@@ -8,13 +8,15 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.smartold.ui.homechild.FunctionFragment
 
 
-
-class MainActivity : AppCompatActivity() {
+//  继承接口
+class MainActivity : AppCompatActivity(), FunctionFragment.OnFunctionClickListener {
 
     private var view_pager: ViewPager? = null // ViewPager控件
     private var radio_group: RadioGroup? = null // 单选按钮组
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var radio_map:RadioButton? = null
     private var radio_chat:RadioButton? = null
     private var radio_personal:RadioButton? = null // 按钮首页，分类，个人中心
+
 
     // 绑定控件
     private fun initView() {
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         radio_map = findViewById<RadioButton>(R.id.radio_map)
         radio_chat = findViewById<RadioButton>(R.id.radio_chat)
         radio_personal = findViewById<RadioButton>(R.id.radio_personal)
+
     }
 
     private lateinit var homeFragment: Fragment
@@ -115,7 +119,12 @@ class MainActivity : AppCompatActivity() {
         initMove(); // 滑屏时按钮随着变化
         initOnclick(); // 单击按钮，碎片随着变化
         enableEdgeToEdge()
+    }
 
 
+    // 实现functionOnclick接口
+    override fun onFunctionClick() {
+        position = 1
+        view_pager!!.currentItem = position
     }
 }

@@ -1,5 +1,6 @@
 package com.example.smartold.ui
 
+import android.content.Context
 import com.example.smartold.R
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -62,17 +63,24 @@ class HomeFragment : Fragment() {
         val carerFragment = CarerFragment()
         val careTransaction = childFragmentManager.beginTransaction()
         careTransaction.replace(R.id.carer_fragment_container,carerFragment)
-        careTransaction.commit()
+        careTransaction.commitNow()
 
         // 加载FunctionFragment
         val functionFragment = FunctionFragment()
         val functionTransaction = childFragmentManager.beginTransaction()
         functionTransaction.replace(R.id.function_fragment_container,functionFragment)
-        functionTransaction.commit()
+        functionTransaction.commitNow()
 
         // 返回view
         return view
     }
 
-
+    //  Fragment附加到Activity时调用
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (context is MainActivity) {
+            val functionFragment = childFragmentManager.findFragmentById(R.id.function_fragment_container) as FunctionFragment
+            functionFragment.setOnFunctionClickListener(context as MainActivity)
+        }
+    }
 }

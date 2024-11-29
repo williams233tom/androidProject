@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.smartold.R
+import com.example.smartold.ui.chatchild.ChatItemFragment
+import com.example.smartold.ui.personalchild.HospitalFragment
+import com.example.smartold.ui.personalchild.OwnerFragment
 
 class ChatFragment : Fragment() {
     override fun onCreateView(
@@ -30,6 +33,12 @@ class ChatFragment : Fragment() {
             //标题
             activity.supportActionBar!!.title = "" // Optional: Set a title
         }
+
+        // 加载chatItemFragment
+        val chatItemFragment = ChatItemFragment()
+        val chatItemTransaction = childFragmentManager.beginTransaction()
+        chatItemTransaction.replace(R.id.chat_fragment_container,chatItemFragment)
+        chatItemTransaction.commit()
 
         // 返回view
         return view
