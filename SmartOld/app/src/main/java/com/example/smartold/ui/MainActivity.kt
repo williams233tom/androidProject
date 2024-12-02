@@ -8,10 +8,10 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.smartold.ui.adapter.MyFragmentAdapter
 import com.example.smartold.ui.homechild.FunctionFragment
 
 
@@ -123,8 +123,16 @@ class MainActivity : AppCompatActivity(), FunctionFragment.OnFunctionClickListen
 
 
     // 实现functionOnclick接口
-    override fun onFunctionClick() {
-        position = 1
-        view_pager!!.currentItem = position
+    override fun onFunctionClick(types:Int) {
+        if (types == 0){
+            position = 1
+            view_pager!!.currentItem = position
+        }else if (types == 1){
+            position = 2
+            view_pager!!.currentItem = position
+        }else if (types == 2){
+            position = 3
+            view_pager!!.currentItem = position
+        }
     }
 }

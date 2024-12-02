@@ -7,6 +7,18 @@ android {
     namespace = "com.example.smartold"
     compileSdk = 34
 
+    //配置layout子文件夹
+    sourceSets {
+        getByName("main") {
+            res.srcDirs(
+                "src/main/res/layout/chatchild",
+                "src/main/res/layout/fragment",
+                "src/main/res/layout/dialog",
+                "src/main/res/layout"
+            )
+        }
+    }
+
     defaultConfig {
         applicationId = "com.example.smartold"
         minSdk = 24

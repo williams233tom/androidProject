@@ -15,7 +15,7 @@ class FunctionFragment : Fragment() {
 
     //  创建接口
     interface OnFunctionClickListener {
-        fun onFunctionClick()
+        fun onFunctionClick(types:Int)
     }
 
     private var listener: OnFunctionClickListener? = null
@@ -35,8 +35,17 @@ class FunctionFragment : Fragment() {
         //  创建Listener
         val functionNavigationMapping = view.findViewById<ConstraintLayout>(R.id.function_navigationMapping)
         functionNavigationMapping.setOnClickListener {
-            listener?.onFunctionClick()
+            listener?.onFunctionClick(0)
         }
+        val functionChatReact = view.findViewById<ConstraintLayout>(R.id.function_chatReact)
+        functionChatReact.setOnClickListener {
+            listener?.onFunctionClick(1)
+        }
+        val functionHealthManager = view.findViewById<ConstraintLayout>(R.id.function_healthManager)
+        functionHealthManager.setOnClickListener {
+            listener?.onFunctionClick(2)
+        }
+
 
         return view
     }
