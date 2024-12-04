@@ -1,18 +1,21 @@
 package com.example.smartold.ui
 
 //要导入自己的R包
-import com.example.smartold.R
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.smartold.R
 import com.example.smartold.ui.adapter.MyFragmentAdapter
 import com.example.smartold.ui.homechild.FunctionFragment
+import com.google.android.material.navigation.NavigationView
 
 
 //  继承接口
@@ -113,7 +116,34 @@ class MainActivity : AppCompatActivity(), FunctionFragment.OnFunctionClickListen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.jumpbar_fragment)
+        setContentView(R.layout.main_activity)
+
+        //导航菜单
+        val navView = findViewById<NavigationView>(R.id.nav_view)
+        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        navView.setNavigationItemSelectedListener { item ->
+            // 处理菜单项选择事件
+            val id = item.getItemId()
+
+            if (id == R.id.navMap) {
+                position = 2
+                view_pager!!.currentItem = position
+            } else if (id == R.id.navChat) {
+                position = 3
+                view_pager!!.currentItem = position
+            } else if (id == R.id.navPersonal) {
+                position = 4
+                view_pager!!.currentItem = position
+            } else if (id == R.id.navCarer){
+                val intent = Intent (this ,CareInfoActivity::class.java)
+                startActivity(intent)
+            }
+
+            // 关闭抽屉
+            drawer.closeDrawers()
+            true
+        }
+
         initView(); // 绑定控件
         initData(); // 将碎片类添加到ViewPager容器中
         initMove(); // 滑屏时按钮随着变化
@@ -135,4 +165,5 @@ class MainActivity : AppCompatActivity(), FunctionFragment.OnFunctionClickListen
             view_pager!!.currentItem = position
         }
     }
+
 }

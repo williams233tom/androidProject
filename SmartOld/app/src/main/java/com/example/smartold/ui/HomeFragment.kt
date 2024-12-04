@@ -48,9 +48,10 @@ class HomeFragment : Fragment() {
             //标题置空
             activity.supportActionBar!!.title = ""
 
+            //菜单栏
             toolbar.setNavigationIcon(R.drawable.menu) // 替换为您的图标资源
-            toolbar.setNavigationOnClickListener {
 
+            toolbar.setNavigationOnClickListener {
                 // 调用侧边栏菜单
                 // 获取 DrawerLayout 的引用
                 drawerLayout = activity.findViewById(R.id.drawer_layout)

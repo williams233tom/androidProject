@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+        android:id="@+id/navMap"
+        android:icon="@drawable/map"
+        android:title="地图" />
+
+        <item
+        android:id="@+id/navChat"
+        android:icon="@drawable/chat"
+        android:title="聊天" />
+
+        <item
+        android:id="@+id/navPersonal"
+        android:icon="@drawable/personal"
+        android:title="个人中心" />
+
+        <item
+        android:id="@+id/navCarer"
+        android:icon="@drawable/carer"
+        android:title="关怀者" />
+
+    </group>
+</menu>

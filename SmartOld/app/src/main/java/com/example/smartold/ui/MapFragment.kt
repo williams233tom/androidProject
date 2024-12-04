@@ -25,8 +25,6 @@ class MapFragment : Fragment() {
         val activity = activity as AppCompatActivity?
         if (activity != null) {
             activity.setSupportActionBar(toolbar)
-            //返回按钮
-            activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             //标题
             activity.supportActionBar!!.title = "" // Optional: Set a title
         }

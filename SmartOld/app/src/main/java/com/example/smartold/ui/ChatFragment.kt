@@ -1,7 +1,9 @@
 package com.example.smartold.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -14,6 +16,7 @@ import com.example.smartold.ui.personalchild.HospitalFragment
 import com.example.smartold.ui.personalchild.OwnerFragment
 
 class ChatFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,8 +31,6 @@ class ChatFragment : Fragment() {
         val activity = activity as AppCompatActivity?
         if (activity != null) {
             activity.setSupportActionBar(toolbar)
-            //返回按钮
-            activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             //标题
             activity.supportActionBar!!.title = "" // Optional: Set a title
         }
@@ -43,4 +44,5 @@ class ChatFragment : Fragment() {
         // 返回view
         return view
     }
+
 }

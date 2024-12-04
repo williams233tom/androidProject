@@ -1,6 +1,7 @@
 package com.example.smartold.ui
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -72,5 +73,14 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener  {
         msgList.add(msg2)
         val msg3 = Msg("This is Tom. Nice talking to you. ", Msg.TYPE_RECEIVED)
         msgList.add(msg3)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            // 处理返回按钮点击事件
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

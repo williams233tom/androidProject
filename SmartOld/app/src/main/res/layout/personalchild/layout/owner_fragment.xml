@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ownerData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!--    睡眠    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sleepColum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/sleepImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sleep"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sleepImage"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="1"
+                android:orientation="vertical"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginStart="20dp">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/columSleep_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="深度睡眠时间"
+                    app:layout_constraintBottom_toTopOf="@id/columSleep_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6.5小时"
+                    app:layout_constraintTop_toBottomOf="@id/columSleep_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    心率    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/heartRateColum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sleepColum"
+            android:layout_marginTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/heartRateImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/heartrate"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/heartRateImage"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="1"
+                android:orientation="vertical"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginStart="20dp">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/columHeartRate_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="平均心率"
+                    app:layout_constraintBottom_toTopOf="@id/columHeartRate_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="80次/分钟"
+                    app:layout_constraintTop_toBottomOf="@id/columHeartRate_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    血压    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pressureColum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heartRateColum"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/pressureImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/pressure"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/pressureImage"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="1"
+                android:orientation="vertical"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginStart="20dp">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/columPressure_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="平均血压"
+                    app:layout_constraintBottom_toTopOf="@id/columPressure_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="110毫米汞柱"
+                    app:layout_constraintTop_toBottomOf="@id/columPressure_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    上次记录时间    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lastTimeColum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pressureColum"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/lastTimeImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/age"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lastTimeImage"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="1"
+                android:orientation="vertical"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginStart="20dp">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/columLastTime_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="上次记录时间"
+                    app:layout_constraintBottom_toTopOf="@id/columLastTime_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="昨天"
+                    app:layout_constraintTop_toBottomOf="@id/columLastTime_guideline"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/connectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="联系关怀者"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/blue"
+        app:cornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ownerData"
+        android:layout_marginTop="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

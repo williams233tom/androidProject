@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/timeMessageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="定时发送信息"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeMessageText"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white">
+
+        <!--    信息      -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wrapMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="通知信息："
+                app:layout_constraintWidth_percent="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入信息"
+                app:layout_constraintWidth_percent="0.7"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColorHint="#888888"
+                app:layout_constraintStart_toEndOf="@id/message"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今天搜索10月23日"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wrapMessage"
+            android:layout_marginTop="10dp"/>
+
+        <!--    按钮组     -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wrapClock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateText"
+            android:layout_marginTop="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clockColum1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/innerGuideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/innerGuideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.66" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="09:00 AM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/innerGuideline1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="10:00 AM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="@id/innerGuideline1"
+                    app:layout_constraintEnd_toEndOf="@id/innerGuideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="11:00 AM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="@id/innerGuideline2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clockColum2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clockColum1"
+                android:layout_marginTop="10dp">
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/innerGuideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <!--   参考线     -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/innerGuideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.66" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="13:00 PM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/innerGuideline3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="14:00 PM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="@id/innerGuideline3"
+                    app:layout_constraintEnd_toEndOf="@id/innerGuideline4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/clock6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="15:00 PM"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/cyan"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintStart_toStartOf="@id/innerGuideline4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

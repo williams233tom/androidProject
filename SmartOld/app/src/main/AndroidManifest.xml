@@ -30,6 +30,10 @@
             android:name=".ui.ChatDetailActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".ui.CarersActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

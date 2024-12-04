@@ -12,8 +12,12 @@ android {
         getByName("main") {
             res.srcDirs(
                 "src/main/res/layout/chatchild",
-                "src/main/res/layout/fragment",
-                "src/main/res/layout/dialog",
+                "src/main/res/layout/homechild",
+                "src/main/res/layout/personalchild",
+                "src/main/res/layout/mapchild",
+                "src/main/res/layout/careinfo",
+                "src/main/res/layout/navigation",
+                "src/main/res/layout/carers",
                 "src/main/res/layout"
             )
         }
